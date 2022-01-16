@@ -1,5 +1,4 @@
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import model.Faktura;
 import model.ListaFaktur;
@@ -29,8 +28,7 @@ public class CSVReader {
             ListaFaktur listaFaktur = new ListaFaktur();
             ArrayList<Faktura> faktury = new ArrayList<>();
             String[] separatedLine;
-
-            String line = "";
+            String line;
 
             reader.readLine();
             while((line = reader.readLine()) != null) {
@@ -60,16 +58,6 @@ public class CSVReader {
             e.printStackTrace();
         }
     }
-
-//    public void marshall() {
-//        try {
-//            JAXBContext jaxbContext = JAXBContext.newInstance(Faktura.class);
-//            for (Faktura f : this.listaFaktur) {
-//            }
-//        } catch (JAXBException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
 
     // attributes

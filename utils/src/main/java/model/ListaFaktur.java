@@ -18,9 +18,6 @@ public class ListaFaktur {
         this.faktury = faktury;
     }
 
-    public void addToList(Faktura f) {
-        this.faktury.add(f);
-    }
 
     private ArrayList<Faktura> faktury = new ArrayList<>();
 }

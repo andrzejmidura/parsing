@@ -1,6 +1,5 @@
 package model;
 
-import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"nazwaOdbiorcy", "adresOdbiorcy", "NIPOdbiorcy", "dataWystawienia", "dataSprzedazy", "nrFaktury", "tytulPozycji", "liczbaSztuk", "cenaJednostkowa", "stawkaPodatku", "kwotaPodatku", "cenaNettoPozycji", "cenaBruttoPozycji", "cenaNettoFakturyLacznie", "cenaBruttoFakturyLacznie"})
