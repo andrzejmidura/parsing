@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.Objects;
 
 public class Main {
@@ -8,10 +7,9 @@ public class Main {
             throw new Exception("Incorrect number of arguments! Expected: 2");
         }
 
-        // check the file type
-//        String[] inputFilePath = args[0].split(File.separator);
-//        String fileType = inputFilePath[inputFilePath.length-1];
-        String fileType = "csv";
+        // save the file type
+        String[] inputFilePath = args[0].split("\\.");
+        String fileType = inputFilePath[inputFilePath.length-1];
 
         // TODO: check if output filename is correct
 
@@ -19,15 +17,18 @@ public class Main {
         if(Objects.equals(fileType, "csv")) {
             // TODO: check if file is empty
             CSVReader csvReader = new CSVReader(System.getProperty("user.dir") + "\\main\\src\\main\\resources\\" + args[0], System.getProperty("user.dir") + "\\main\\src\\main\\resources\\" + args[1]);
-            csvReader.generateJavaClasses();
+            csvReader.parse();
+            System.out.println("Input file converted successfully to " + args[1] + ".");
 
         } else if (Objects.equals(fileType, "xlsx")) {
 
             // xlsx reader
+            XLSXReader xlsxReader = new XLSXReader(System.getProperty("user.dir") + "\\main\\src\\main\\resources\\" + args[0], System.getProperty("user.dir") + "\\main\\src\\main\\resources\\" + args[1]);
+            xlsxReader.parse();
+            System.out.println("Input file converted successfully to " + args[1] + ".");
 
         } else {
             throw new Exception("Wrong input file type! Expected: csv/xlsx");
         }
-        System.out.println("Input file converted successfully to output.xml file.");
     }
 }
